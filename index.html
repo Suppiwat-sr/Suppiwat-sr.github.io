@@ -18,7 +18,7 @@
 
                     <!-- Logo -->
                         <div id="logo">
-                            <span class="image avatar48"><img src="https://www.facebook.com/photo/?fbid=8991622427519324&set=a.158045740877081" alt="Suppiwat Srichun" style="width:48px;height:48px;object-fit:cover;border-radius:50%" loading="lazy" /></span>
+                            <span class="image avatar48 avatar-frame"><img src="images/myphoto.jpg.jpg" alt="Suppiwat Srichun" loading="lazy" decoding="async" onload="this.classList.add('loaded')" /></span>
                             <h1 id="title">SUPPIWAT SRICHUN</h1>
                             <p>Human Resource • Recruiter</p>
                         </div>
@@ -59,7 +59,7 @@
                         <div class="container">
                             <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
                                 <div style="flex:0 0 140px;">
-                                    <span class="image avatar"><img src="images/suppiwat-headshot.jpg" alt="Suppiwat Srichun" style="width:140px;height:140px;object-fit:cover;border-radius:50%;box-shadow:0 4px 12px rgba(0,0,0,0.18)" loading="lazy" /></span>
+                                    <span class="image avatar hero-frame" tabindex="0" aria-label="Photo of Suppiwat Srichun"><img src="images/myphoto.jpg.jpg" alt="Suppiwat Srichun" loading="lazy" decoding="async" onload="this.classList.add('loaded')" /></span>
                                 </div>
                                 <div style="flex:1;min-width:220px;">
                                     <h1 style="margin:0 0 .25rem 0">SUPPIWAT SRICHUN</h1>
@@ -201,24 +201,6 @@
                                             <li>Produced training materials and assessment rubrics for managers.</li>
                                         </ul>
                                     </article>
-
-                                    <!-- Card: Food & Beverage Staff -->
-                                    <article style="background:#0f1720;border:1px solid rgba(255,255,255,0.04);padding:1rem;border-radius:10px;color:#e6eef6;display:flex;flex-direction:column;gap:.6rem;">
-                                        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;">
-                                            <div>
-                                                <h3 style="margin:0;font-size:1.06rem">Food & Beverage Staff</h3>
-                                                <div style="color:#9fb0bd;font-size:.9rem;margin-top:.25rem">Rosewood Phuket</div>
-                                                <div style="margin-top:.45rem;">
-                                                    <span style="display:inline-block;background:rgba(159,176,189,0.07);color:#9fb0bd;padding:.18rem .5rem;border-radius:999px;font-size:.78rem">Guest service</span>
-                                                </div>
-                                            </div>
-                                            <div style="color:#9fb0bd;font-size:.85rem;white-space:nowrap">2017 — 2018</div>
-                                        </div>
-
-                                        <p style="margin:0;color:#cfe0ea;font-size:.95rem"><strong>Summary:</strong> Delivered luxury guest service and supported high quality standards.</p>
-
-                                        <ul style="margin:0;padding-left:1.15rem;line-height:1.55;color:#d7e7f0">
-                                            <li>Maintained service standards and contributed to positive guest experiences.</li>
                                         </ul>
                                     </article>
 
@@ -306,7 +288,7 @@
 
 
 
-                            <p>Professional email: <a href="mailto:anirach@example.com">Suppiwat.sr@bdms.co.th</a></p>
+                            <p>Professional email: <a href="mailto:anirach@example.com"> Suppiwat.sr@bdms.co.th</a></p>
                         </div>
                     </section>
 
@@ -330,6 +312,77 @@
             <script src="assets/js/breakpoints.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
+
+        <style>
+            /* Improved avatar / headshot framing for consistent crop and polish */
+             .avatar-frame {
+                 width:48px;
+                 height:48px;
+                 border-radius:50%;
+                 overflow:hidden;
+                 display:inline-block;
+                 border:2px solid rgba(255,255,255,0.06);
+                 box-shadow:0 6px 18px rgba(0,0,0,0.28);
+                 background:linear-gradient(180deg, #141414 0%, #0d0d0d 100%);
+                 vertical-align:middle;
+                 transition:transform .22s ease, box-shadow .22s ease;
+             }
+             .avatar-frame img {
+                 width:100%;
+                 height:100%;
+                 object-fit:cover;
+                object-position:50% 18%; /* center face higher in the crop */
+                 display:block;
+                 filter:contrast(1.03) saturate(1.05);
+                 will-change:transform;
+             }
+             .avatar-frame:hover { transform:translateY(-3px) scale(1.03); box-shadow:0 10px 26px rgba(0,0,0,0.36); }
+
+             .hero-frame {
+                 position:relative;
+                 width:140px;
+                 height:140px;
+                 border-radius:50%;
+                 overflow:hidden;
+                 display:block;
+                 border:4px solid rgba(255,255,255,0.04);
+                 box-shadow:0 18px 44px rgba(0,0,0,0.48);
+                 background:#0b0b0b;
+                 transition:transform .35s cubic-bezier(.2,.9,.3,1), box-shadow .35s ease;
+             }
+             .hero-frame img {
+                 width:100%;
+                 height:100%;
+                 object-fit:cover;
+                object-position:50% 18%; /* bring face into the visible circle */
+                 display:block;
+                 transform:scale(1.12); /* gentle zoom to fill the frame */
+                 transition:transform .6s ease;
+                 filter:contrast(1.04) brightness(0.98);
+                 will-change:transform;
+                 backface-visibility:hidden;
+             }
+            .hero-frame:hover { transform:translateY(-6px) scale(1.02); box-shadow:0 26px 64px rgba(0,0,0,0.6); }
+             .hero-frame::before {
+                 content: "";
+                 position:absolute;
+                 inset:0;
+                 border-radius:50%;
+                 pointer-events:none;
+                 background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+                 mix-blend-mode:overlay;
+             }
+            .hero-frame:hover img { transform:scale(1.18); } /* enlarge on hover for effect */
+
+             /* responsive sizes */
+             @media (max-width:520px) {
+                 .hero-frame { width:96px; height:96px; border-width:3px; }
+                 .avatar-frame { width:40px; height:40px; border-width:1.5px; }
+             }
+             @media (min-width:1000px) {
+                 .hero-frame { width:180px; height:180px; }
+             }
+         </style>
 
     </body>
 </html>

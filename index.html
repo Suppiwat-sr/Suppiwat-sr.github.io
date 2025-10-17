@@ -20,7 +20,7 @@
                         <div id="logo">
                             <span class="image avatar48 avatar-frame"><img src="images/myphoto.jpg.jpg" alt="Suppiwat Srichun" loading="lazy" decoding="async" onload="this.classList.add('loaded')" /></span>
                             <h1 id="title">SUPPIWAT SRICHUN</h1>
-                            <p>Human Resource • Recruiter</p>
+                             <p>Human Resource • Recruiter</p>
                         </div>
 
                     <!-- Nav -->
@@ -62,10 +62,10 @@
                                     <span class="image avatar hero-frame" tabindex="0" aria-label="Photo of Suppiwat Srichun"><img src="images/myphoto.jpg.jpg" alt="Suppiwat Srichun" loading="lazy" decoding="async" onload="this.classList.add('loaded')" /></span>
                                 </div>
                                 <div style="flex:1;min-width:220px;">
-                                    <h1 style="margin:0 0 .25rem 0">SUPPIWAT SRICHUN</h1>
+                                    <h1 class="hero-title" style="margin:0 0 .25rem 0">SUPPIWAT SRICHUN</h1>
                                     <p class="subtitle" style="margin:0 0 1rem 0;font-weight:600;color:#ddd">Human Resource • Recruiter</p>
                                     <p style="margin-bottom:1rem">
-                                        Hello — I'm a HR and Recruiter base on Healthcare and Hotel service industry.
+                                        Hello — I'm a HR and Recruiter base on Healthcare and Hospitality industry.
                                     </p>
                                     <div>
                                         <a href="#education" class="button scrolly">Education</a>
@@ -103,9 +103,6 @@
                                 <h2>Experiences</h2>
                             </header>
 
-                            <p style="color:#c8d6df;margin-bottom:.75rem">
-                                Clear, scannable overview of professional roles — quick highlights on the left, concise impact bullets on the right.
-                            </p>
 
                             <!-- Grid: left = meta, right = details -->
                             <div style="display:grid;grid-template-columns:1fr;gap:1rem;">
@@ -199,7 +196,6 @@
                                         <ul style="margin:0;padding-left:1.15rem;line-height:1.55;color:#d7e7f0">
                                             <li>Delivered practical workshops and on‑the‑job training for frontline staff.</li>
                                             <li>Produced training materials and assessment rubrics for managers.</li>
-                                        </ul>
                                     </article>
                                         </ul>
                                     </article>
@@ -219,8 +215,6 @@
                             <header>
                                 <h2>Projects</h2>
                             </header>
-
-                            <p>Selected projects that draw directly on my HR, recruitment and training experience — practical, measurable work you can review or reuse.</p>
 
                             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin-top:1rem;">
 
@@ -270,7 +264,6 @@
                                     </ul>
                                     <p style="margin-top:.6rem;color:#9fb0bd;font-size:.85rem"><a href="#" style="color:inherit">Read summary</a></p>
                                 </article>
-
                             </div>
 
                             <p style="margin-top:1rem;color:#bbb;font-size:.95rem">Want a specific project added, or links to demos/source files? Indicate which project and I’ll add details or attachments.</p>
@@ -289,6 +282,8 @@
 
 
                             <p>Professional email: <a href="mailto:anirach@example.com"> Suppiwat.sr@bdms.co.th</a></p>
+							
+							<p>Page: Bangkok Hospital Phuket Careers</p>
                         </div>
                     </section>
 
@@ -374,13 +369,47 @@
              }
             .hero-frame:hover img { transform:scale(1.18); } /* enlarge on hover for effect */
 
+             /* Make header title clearer on the colorful background */
+             #title {
+                 color: #ffffff;
+                 font-weight: 800;
+                 font-size: 1.05rem;
+                 letter-spacing: 0.9px;
+                 text-transform:uppercase;
+                 -webkit-font-smoothing:antialiased;
+                 text-shadow: 0 6px 18px rgba(0,0,0,0.65), 0 1px 0 rgba(255,255,255,0.02);
+                 display:inline-block;
+                 padding:4px 8px;
+                 border-radius:6px;
+                 background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+             }
+
+             /* Hero / main page heading (larger, crisp) */
+             .hero-title{
+                 color:#ffffff;
+                 font-size:1.9rem;
+                 font-weight:700;
+                 letter-spacing:0.6px;
+                 line-height:1.05;
+                 text-shadow: 0 10px 30px rgba(0,0,0,0.6);
+             }
+
+             /* Slightly brighter subtitle to match */
+             .subtitle {
+                 color: #f0f6fb;
+                 opacity: 0.98;
+             }
+
              /* responsive sizes */
              @media (max-width:520px) {
                  .hero-frame { width:96px; height:96px; border-width:3px; }
                  .avatar-frame { width:40px; height:40px; border-width:1.5px; }
+                 .hero-title { font-size:1.25rem; }
+                 #title { font-size:0.95rem; padding:3px 6px; }
              }
              @media (min-width:1000px) {
                  .hero-frame { width:180px; height:180px; }
+                 .hero-title { font-size:2.2rem; }
              }
          </style>
 
